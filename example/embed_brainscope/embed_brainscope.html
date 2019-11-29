@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How to embed brainscope</title>
+    <style type="text/css">
+        iframe[name="BrainScopeSelectionDemo"] {
+            position: absolute;
+            visibility: hidden;
+            z-index: -100;
+            height: 100%;
+            width: 100%;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.addEventListener("message", function(event) {
+            if (event.data === "BrainScope ready") {
+                document.getElementsByName("BrainScopeSelectionDemo")[0].style.zIndex = 100;
+                document.getElementsByName("BrainScopeSelectionDemo")[0].style.visibility = "visible";
+                document.getElementById("Demo content").style.visibility = "hidden";
+                document.getElementById("Demo content").style.zIndex -100;
+                // Bind the FormData object and the form element
+                var form = document.getElementById("BrainScopeForm");
+                var FD = new FormData(form);
+                var messageJson = {};
+                for( entry of FD.entries()) {
+                    messageJson[entry[0]] = entry[1];
+                }
+                window.MyBrainScopeWin.postMessage(JSON.stringify(messageJson), '*')
+            }
+
+        }, false);
+
+
+        window.addEventListener("load", function () {
+          function openBrainScope() {
+            window.MyBrainScopeWin = window.open("http://0.0.0.0/brainscope", "BrainScopeSelectionDemo");
+          }
+
+          // Access the form element...
+          var form = document.getElementById("BrainScopeForm");
+
+          // ...and take over its submit event.
+          form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            openBrainScope();
+          });
+        });
+    </script>
+</head>
+<body>
+    <div id="Demo content">
+        <base target="_blank" href="http://www.example.com/page.html">
+        <p>
+        <a href="http://0.0.0.0/brainscope?display=2&group=Genes&property=entrez_id&selection=27,28,29&description=Testing+query+selection+27,28,29">Open BrainScope</a>
+            with a self defined selection. In this case the string <i>?display=2&group=Genes&property=entrez_id&selection=27,28,29&description=Testing+query+selection+27,28,29"</i>
+        </p>
+
+        <form id="BrainScopeForm">
+            <table>
+                <tr>
+                    <td><label for="display">BrainScope data set (0-2):</label></td>
+                    <td><input id="display" name="display" value="0" type="number"></td>
+                </tr>
+                <tr>
+                    <td><label for="group">Selection group:</label></td>
+                    <td>
+                        <select name="group" form="BrainScopeForm">
+                            <option value="Genes">Genes</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="property">Selection property:</label></td>
+                    <td>
+                        <select name="property" form="BrainScopeForm">
+                            <option value="entrez_id">entrez_id</option>
+                            <option value="gene_symbol">gene_symbol</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr><td><label for="selections">Enter one or more selections:</label><td></tr>
+                <tr><td><textarea id="selections" name="selections" rows="8" cols="50">CD1:0xFF0000:26,27,28;CD2:0x0000FF:34,35,36,37</textarea><td></tr>
+                <tr><td><p>Enter one or more selections with the following format: </p>
+                <p>Name_A:A_0,A_1,A_2,sel_A_3,...;Name_B:B_0,B_1,B_2,...</p>
+                <p>i.e. &lt;name&gt;:&lt;comma_separated_values&gt;&lt;;name&gt;:&lt;comma_separated_values&gt;</p></td></tr>
+                <tr>
+                <td><input type="submit" value="Load selection(s) to BrainScope"><td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <iframe name="BrainScopeSelectionDemo"></iframe>
+</body>
+</html>

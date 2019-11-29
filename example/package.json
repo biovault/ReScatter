@@ -1,0 +1,21 @@
+{
+  "name": "example",
+  "version": "0.1.0",
+  "description": "ReScatter examples",
+  "author": {
+    "name": "Baldur van Lew",
+    "email": "bdotvanunderscorelewatlumcdotnl"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "scripts": {
+    "build_all_examples": "node build_examples"
+  },
+  "devDependencies": {
+    "child_process": "^1.0.2"
+  }
+}

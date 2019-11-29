@@ -1,0 +1,230 @@
+/* Dark theme: colro: light background-color: dark*/
+.main_content {
+    height: calc(100vh - 60px);
+	white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: calc(100vw - 24px);
+    margin-right:24px;
+    background-color: @mainColor;
+    color: @fontColor;
+    font-family: @fontFamily;
+    font-size: unit(@fontSize, px);
+}
+
+.content_block {
+    display: flex;
+    flex: 1;
+    flex-direction:row;
+    width: 100%;
+}
+
+/* controls, plot and optional thematic map*/
+.content_left {
+    font-size: unit(@fontSize, px);
+    flex: 0 0 auto;
+    width: 200px;
+    margin-right:16px;
+    height: calc(96vh - 60px);
+    position: relative;
+	display: inline-block;
+    left: 6px;
+    resize: horizontal;
+}
+
+.content_center {
+    flex: 1 1 75%;
+    min-width:200px;
+    /* padding:2px; */
+}
+
+.content_right {
+    flex: 0 0 auto;
+    width:150px;
+    font-size: unit(@fontSize, px);
+    height: calc(96vh - 60px);
+    resize: horizontal;
+    display: none;
+}
+
+
+.content_splitter {
+    flex: 0 0 auto; /* no grow no shrink*/
+    width: 10px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAXAQMAAAD0oWdxAAAABlBMVEUAAACkvtSA7tmIAAAAAXRSTlMAQObYZgAAAA5JREFUeF5jWMDAQDwGAKyuB4FpGQdzAAAAAElFTkSuQmCC) no-repeat center center @borderColor;
+    background-color: lighten(@backColor, 10%);
+    cursor: col-resize;
+    margin-left: 6px;
+    margin-right: 6px;
+    /* z-index is a workaround for an overlap with the surrounding area making hover selection difficult */
+    z-index: 10;
+}
+
+.content_splitter_horiz {
+    flex: 0 0 auto; /* no grow no shrink*/
+    height: 10px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAXAQMAAAD0oWdxAAAABlBMVEUAAACkvtSA7tmIAAAAAXRSTlMAQObYZgAAAA5JREFUeF5jWMDAQDwGAKyuB4FpGQdzAAAAAElFTkSuQmCC) no-repeat center center @borderColor;
+    background-color: lighten(@backColor, 10%);
+    cursor: row-resize;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    /* z-index is a workaround for an overlap with the surrounding  area making hover selection difficult */
+    z-index: 10;
+}
+
+.panel-container-vertical {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+}
+
+.widget-panel-bottom {
+    flex: 1 1 auto;
+}
+
+.row {
+    text-align: center;
+}
+
+.pad_plot {
+    display: inline-block;
+    width: 50%;
+}
+
+.plot_title {
+    color: @fontColor;
+    font-size: unit(@barFontSize, px) !important;
+}
+
+.tooltip-inner {
+    min-width: 200px;
+    max-width: 350px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.tooltip.top-left .tooltip-arrow {
+    bottom: -5px;
+    left: 5px;
+    border-width: 5px 5px 0;
+    border-top-color: black;
+}
+.tooltip.top-right .tooltip-arrow {
+    bottom: -5px;
+    right: 5px;
+    border-width: 5px 5px 0;
+    border-top-color: black;
+}
+.tooltip.bottom-left .tooltip-arrow {
+    top: -5px;
+    left: 5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: black;
+}
+.tooltip.bottom-right .tooltip-arrow {
+    top: -5px;
+    right: 5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: black;
+}
+
+
+.loader-bg {
+    border: 1px solid fade(@mainColor, 10%);
+    border-radius: 10px;
+    box-sizing: border-box;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+@keyframes boxair {
+	0% {box-shadow: 0 0 10px #fff, 0 0 20px #3FB3DA;}
+	50% {box-shadow: none;}
+	100% {box-shadow: 0 0 10px #fff, 0 0 20px #3FB3DA;}
+}
+
+.boxair {
+    animation:boxair 2s linear 0s normal none infinite running;
+}
+
+.loadingOverlay {
+    left: 35%;
+    margin: auto;
+    position: fixed;
+    text-align: center;
+    top: 30%;
+    /*width: 20%;*/
+    z-index: 899;
+    padding: 20px;
+	color: @fontColor;
+}
+
+select {
+    color: @fontColor;
+    background: @alterColor;
+}
+body {
+    background-color: @mainColor;
+    font-family: @fontFamily;
+    font-size: unit(@fontSize, px);
+    min-height: 100%
+}
+
+textarea {
+    color: @fontColor;
+    background: @alterColor;
+}
+
+// High z controla and underlying Image strip footer
+#front_screen {
+    height: 100%;
+    width: 100%;
+    position:relative;
+    z-index: 100;
+    background: black;
+    margin-bottom: 160px;
+}
+
+.visible_strip_footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    /* Set the fixed height of the footer here */
+    height: 160px;
+    background-color: black;
+    color: #aaaaaa;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.hidden_strip_footer {
+    display: none;
+    position: relative;
+    height: 0%;
+    width: 0%;
+}
+
+img.selected_thumbnail {
+    height: 135px;
+    width: auto;
+    border: 4px solid rgb(250, 0, 60);
+}
+
+img.unselected_thumbnail {
+    height: 135px;
+    width: auto;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+input.delbtn {
+    background-color: @buttonColor;
+}
+
+input.showbtn {
+    background-color: @buttonColor;
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="28cm" height="11cm" viewBox="155 207 549 217" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="160" y="240" width="80" height="80"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" x="160" y="240" width="80" height="80"/>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 8; stroke: #00ff00" x1="160" y1="380" x2="700" y2="380"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 8; stroke: #0000ff" x1="160" y1="420" x2="700" y2="420"/>
+  <g>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" points="183.137,320 183.137,386.667 179.953,386.667 186.321,420 186.321,420 192.688,386.667 189.505,386.667 189.505,320 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" points="183.137,320 183.137,386.667 179.953,386.667 186.321,420 186.321,420 192.688,386.667 189.505,386.667 189.505,320 "/>
+  </g>
+  <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" x="260" y="240" width="80" height="80"/>
+  <g>
+    <rect style="fill: #ffffff" x="500" y="240" width="80" height="80"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" x="500" y="240" width="80" height="80"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="600" y="240" width="80" height="80"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" x="600" y="240" width="80" height="80"/>
+  </g>
+  <g>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" points="275.61,320 275.61,386.667 272.426,386.667 278.794,420 278.794,420 285.161,386.667 281.978,386.667 281.978,320 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" points="275.61,320 275.61,386.667 272.426,386.667 278.794,420 278.794,420 285.161,386.667 281.978,386.667 281.978,320 "/>
+  </g>
+  <g>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" points="198.64,420 198.64,353.333 195.456,353.333 201.823,320 201.823,320 208.191,353.333 205.007,353.333 205.007,420 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" points="198.64,420 198.64,353.333 195.456,353.333 201.823,320 201.823,320 208.191,353.333 205.007,353.333 205.007,420 "/>
+  </g>
+  <g>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" points="528.794,420 528.794,353.333 525.61,353.333 531.978,320 531.978,320 538.345,353.333 535.161,353.333 535.161,420 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" points="528.794,420 528.794,353.333 525.61,353.333 531.978,320 531.978,320 538.345,353.333 535.161,353.333 535.161,420 "/>
+  </g>
+  <g>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" points="633.338,420 633.338,353.333 630.154,353.333 636.522,320 636.522,320 642.889,353.333 639.706,353.333 639.706,420 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" points="633.338,420 633.338,353.333 630.154,353.333 636.522,320 636.522,320 642.889,353.333 639.706,353.333 639.706,420 "/>
+  </g>
+  <g>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" points="289.551,420 289.551,353.333 286.368,353.333 292.735,320 292.735,320 299.103,353.333 295.919,353.333 295.919,420 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" points="289.551,420 289.551,353.333 286.368,353.333 292.735,320 292.735,320 299.103,353.333 295.919,353.333 295.919,420 "/>
+  </g>
+  <g>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" points="230,380 230,340 226.816,340 233.184,320 233.184,320 239.551,340 236.368,340 236.368,380 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" points="230,380 230,340 226.816,340 233.184,320 233.184,320 239.551,340 236.368,340 236.368,380 "/>
+  </g>
+  <g>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" points="328.485,380 328.485,340 325.302,340 331.669,320 331.669,320 338.037,340 334.853,340 334.853,380 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" points="328.485,380 328.485,340 325.302,340 331.669,320 331.669,320 338.037,340 334.853,340 334.853,380 "/>
+  </g>
+  <g>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" points="570,380 570,340 566.816,340 573.184,320 573.184,320 579.551,340 576.368,340 576.368,380 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" points="570,380 570,340 566.816,340 573.184,320 573.184,320 579.551,340 576.368,340 576.368,380 "/>
+  </g>
+  <g>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" points="670,380 670,340 666.816,340 673.184,320 673.184,320 679.551,340 676.368,340 676.368,380 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" points="670,380 670,340 666.816,340 673.184,320 673.184,320 679.551,340 676.368,340 676.368,380 "/>
+  </g>
+  <g>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" points="556.368,320 556.368,360 553.184,360 559.551,380 559.551,380 565.919,360 562.735,360 562.735,320 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" points="556.368,320 556.368,360 553.184,360 559.551,380 559.551,380 565.919,360 562.735,360 562.735,320 "/>
+  </g>
+  <g>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" points="654.544,320 654.544,360 651.36,360 657.728,380 657.728,380 664.095,360 660.912,360 660.912,320 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" points="654.544,320 654.544,360 651.36,360 657.728,380 657.728,380 664.095,360 660.912,360 660.912,320 "/>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="180" y="220">
+    <tspan x="180" y="220">Plots in BLUE group</tspan>
+  </text>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="520" y="220">
+    <tspan x="520" y="220">Plots in GREEN group</tspan>
+  </text>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="358.794" y="375.147">
+    <tspan x="358.794" y="375.147">GREEN selection events</tspan>
+  </text>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="360" y="414.698">
+    <tspan x="360" y="414.698">BLUE selection events</tspan>
+  </text>
+</svg>

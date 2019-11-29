@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="./webix_2_3.css">
+    <script type="text/javascript" src="./webix_2_3.js"></script>
+    <script type="text/javascript" src="./dimrs.js"></script>
+    <script type="text/javascript" src="./rescatter.js"></script>
+    <script type="text/javascript" src="./test_functions.js"></script>
+    <script type="text/javascript">
+        var monitor;
+        // needs to be proxied to actual server on 5000 (avoiding cross origin)
+        var server_url = 'http://127.0.0.1:5000/DimRS';
+        webix.ready(function () {
+            console.log(location.pathname);
+            monitor = new ReScatter.jobs.JobMonitorControl("tsnemonitor");
+        });
+        function addJob(numSubJobs) {
+            var group = BrowserTest.createJobGroup(numSubJobs, server_url);
+            monitor.addJobGroup(group);
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>TestMonitor test page</title>
+</head>
+<body>
+    <div id="tsnemonitor"></div>
+    <div id="addbutton">
+        <!-- Buttons to test the common cases -->
+        <button id="add_job_group_1" type="button" onClick="addJob(1)">Add Job Group 1</button>
+        <button id="add_job_group_2" type="button" onClick="addJob(2)">Add Job Group 2</button>
+        <button id="add_job_group_9" type="button" onClick="addJob(9)">Add Job Group 9</button>
+    </div>
+</body>
+</html>

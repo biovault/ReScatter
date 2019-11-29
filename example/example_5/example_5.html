@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../framework/rescatter_light.css">
+    <link rel="stylesheet" type="text/css" href="./wheel.css">
+    <link rel="stylesheet" type="text/css" href="./jslibs/nouislider.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- 2D WebGL drawing library - required for ReScatter scatter plots -->
+    <script type="text/javascript" src="../framework/vendor/pixi.min.js"></script>
+    <!-- Framework to make WebGL simpler - required for ReScatter scatter plot effects -->
+    <script type="text/javascript" src="../framework/vendor/pixi-gl-core.min.js"></script>
+    <!-- Webix Web widget library - required for ReScatter tool panels -->
+    <script type="text/javascript" src="../framework/vendor/webix_debug.js"></script>
+    <!-- D3 based Radial plot library - required for ReScatter tool panels -->
+    <script type="text/javascript" src="../framework/vendor/d3.v3.min.js"></script>
+    <!-- Resizable slider utility - required for ReScatter layout-->
+    <script type="text/javascript" src="../framework/vendor/jquery-resizable.min.js"></script>
+    <!-- Begin Wheel related scripts -->
+    <script type="text/javascript" src="./jslibs/material.min.js"></script>
+    <script type="text/javascript" src="./jslibs/d3.v4.js"></script>
+    <script type="text/javascript" src="./jslibs/d3-hsv.js"></script>
+    <script type="text/javascript" src="./jslibs/d3-scale-chromatic.js"></script>
+
+    <!-- d3 context menu -->
+    <script type="text/javascript" src="./jslibs/wNumb.min.js"></script>
+    <script type="text/javascript" src="./jslibs/nouislider.min.js"></script>
+    <script type="text/javascript" src="./jslibs/d3-context-menu.js"></script>
+    <script type="text/javascript" src="./jstools/colormaps.js"></script>
+    <script type="text/javascript" src="./jstools/globals.js"></script>
+    <script type="text/javascript" src="./jstools/tools.js"></script>
+    <script type="text/javascript" src="./jstools/ui.js"></script>
+    <script type="text/javascript" src="hierarchy.ui.js"></script>
+    <script type="text/javascript" src="hierarchy.js"></script>
+    <!-- End Wheel related scripts -->
+    <!-- The ReScatter bundle file -->
+    <script type="text/javascript" src="../framework/rescatter.js"></script>
+    <!-- Three possible ReScatter plot layouts are defined here - the end user can
+    redefine them if so desired -->
+    <script type="text/javascript" src="../framework/rescatter_layouts.js"></script>
+
+    <!-- The ReScatter configuration file -->
+    <!-- For browsers without module support the following works
+     it uses a prebuilt config file, the package.json contains the script to build it
+    -->
+    <script type="text/javascript" src="./config.js">
+    </script>
+
+    <!-- If your browser has module support (i.e. at least Chrome 61
+    or Firefox 54 with dom.moduleScripts.enabled) then it is possible
+    to simply include the config file that used ES6 modules.
+    Include the un-transpiled ReScatter config with any dependencies (see example below)
+    and remove the config.js line-->
+    <!--
+    <script type="text/javascript" src="../framework/vendor/konva.min.js"></script>
+    <script type="module" src="./dualview_choropleth_radviz_plugins_config.js"></script>
+    -->
+
+    <!-- The site is using the webix controls so use the webix ready event can be used
+     to start start the site -->
+    <script type="text/javascript">
+        webix.ready(function() {
+            window.siteInstance = new ReScatter.control.SiteInstance(window.siteConfig);
+        });
+    </script>
+
+
+    <meta charset="UTF-8">
+    <title>MNIST tSNE Dual view</title>
+</head>
+<body>
+	<div class="loadingOverlay" id="ReScatter.CONTROL_ID.LOADINGOVERLAY">
+		<h1 class="onair" id="ReScatter.CONTROL_ID.LOADINGPROMPT" data-pointData="{}">Please load a data set...</h1>
+		<div class="loader-bg boxair"></div>
+	</div>
+    <!-- floating div for displaying selection details -->
+    <div id="ReScatter.CONTROL_ID.SELECTIONINFO"></div>
+    <!-- floating div for choropleth annotation -->
+	<div id="ReScatter.CONTROL_ID.ANNOTATECHOROPLETH"></div>
+    <!-- floating div for plot context menu -->
+    <div id="ReScatter.CONTROL_ID.PLOTMENU"></div>
+    <div class="main_content">
+        <div class="content_block">
+            <div class="content_left" id="ReScatter.CONTROL_ID.WIDGETS"></div>
+            <div class="content_splitter" id="ReScatter.CONTROL_ID.LEFTSPLITTER"></div>
+            <div class="content_center" id="ReScatter.CONTROL_ID.CHARTS"></div>
+            <!-- If there is no choropleth leave out the splitter and choropleth divs-->
+            <div class="content_splitter" id="ReScatter.CONTROL_ID.RIGHTSPLITTER"></div>
+            <div  class="content_right" id="ReScatter.CONTROL_ID.CHOROPLETH"></div>
+        </div>
+    </div>
+    <div id="wheelcontrolinclude" style="display: none">
+        <div oncontextmenu="return false;">
+
+            <div id="wheelMainView"></div>
+
+            <div id="uihover">
+                <div id="ui">
+                    <div id="drawer">
+                        <div id="drawerHandle">
+                            <div class="drawerHandleSide" id="leftDrawerHandle">&nbsp;</div>
+                            <div class="drawerHandleSide" id="rightDrawerHandle">&nbsp;</div>
+                        </div>
+                    </div>
+                    <div class="uiContent" id="uiContentLayout">
+                        <select name="exploration" id="explorationSelector" class="varSelector uiItem" >
+                            <option value="" disabled selected>Exploration</option>
+                        </select>
+                        <div id="uncertaintySwitch" class="uiItem">
+                            <label class="mdl-switch mdl-js-switch" for="showVariationCheckBox">
+                                <input type="checkbox" class="mdl-switch__input" id="showVariationCheckBox"/>
+                                <span class="mdl-switch__label">Expression</span>
+                            </label>
+                        </div>
+                        <div id="sizeModeSwitch" class="uiItem">
+                            <label class="mdl-switch mdl-js-switch" for="sizeModeCheckBox">
+                                <input type="checkbox" class="mdl-switch__input" id="sizeModeCheckBox" checked/>
+                                <span class="mdl-switch__label">Uniform Size</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="uiContent" id="uiContent2ndLayout">
+                        <div id="markerRange" class="slider uiItem"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tooltip">
+            <div class="title"></div>
+            <div class="table">
+                <div class="tr">
+                    <div class="tc">Differential Expression:</div>
+                    <div class="tc exp"></div>
+                </div>
+                <div class="tr">
+                    <div class="tc">Beta:</div>
+                    <div class="tc stddev"></div>
+                </div>
+            </div>
+            <svg id="_tooltipHeatmap" width="0" height="0">
+        </div>
+
+        <div id="simple_tooltip">
+            <div class="title"></div>
+        </div>
+    </div>
+</body>
+</html>

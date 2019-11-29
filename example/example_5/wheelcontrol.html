@@ -1,0 +1,56 @@
+<div id="wheelcontrolinclude">
+	<div oncontextmenu="return false;">
+
+		<div id="wheelMainView"></div>
+
+		<div id="uihover">
+			<div id="ui">
+				<div id="drawer">
+					<div id="drawerHandle">
+						<div class="drawerHandleSide" id="leftDrawerHandle">&nbsp;</div>
+						<div class="drawerHandleSide" id="rightDrawerHandle">&nbsp;</div>
+					</div>
+				</div>
+				<div class="uiContent" id="uiContentLayout">
+                    <select name="exploration" id="explorationSelector" class="varSelector uiItem" onchange="setActiveExploration(this.value)">
+                        <option value="" disabled selected>Exploration</option>
+                    </select>
+                    <div id="uncertaintySwitch" class="uiItem">
+                        <label class="mdl-switch mdl-js-switch" for="showVariationCheckBox">
+                            <input type="checkbox" class="mdl-switch__input" id="showVariationCheckBox" onclick="toggleVariation()"/>
+                            <span class="mdl-switch__label">Expression</span>
+                        </label>
+                    </div>
+                    <div id="sizeModeSwitch" class="uiItem">
+                        <label class="mdl-switch mdl-js-switch" for="sizeModeCheckBox">
+                            <input type="checkbox" class="mdl-switch__input" id="sizeModeCheckBox" onclick="toggleSizeMode()" checked/>
+                            <span class="mdl-switch__label">Uniform Size</span>
+                        </label>
+                    </div>
+				</div>
+                <div class="uiContent" id="uiContent2ndLayout">
+                    <div id="markerRange" class="slider uiItem"></div>
+                </div>
+			</div>
+		</div>
+	</div>
+
+	<div id="tooltip">
+		<div class="title"></div>
+		<div class="table">
+			<div class="tr">
+				<div class="tc">Differential Expression:</div>
+				<div class="tc exp"></div>
+			</div>
+			<div class="tr">
+				<div class="tc">Beta:</div>
+				<div class="tc stddev"></div>
+			</div>
+		</div>
+		<svg id="_tooltipHeatmap" width="0" height="0">
+	</div>
+
+    <div id="simple_tooltip">
+        <div class="title"></div>
+    </div>
+</div>
