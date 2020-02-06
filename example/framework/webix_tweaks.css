@@ -1,0 +1,91 @@
+/**
+Some adjustments for more compact webix controls.
+ */
+.webix_list_item {
+    line-height: 20px;
+}
+
+.webix_layout_toolbar.webix_toolbar .webix_icon_button .webix_icon {
+    font-size: 16px;
+}
+.webix_layout_toolbar.webix_toolbar .webix_el_label {
+    font-size: 12px;
+}
+
+.webix_before_all_tabs {
+    display: block !important;
+}
+.webix_ss_filter select, .webix_ss_filter input{
+    background-color: rgb(65,65,65);
+    color: rgb(234, 234, 234);
+}
+
+.webix_accordionitem .webix_accordionitem_header .webix_accordionitem_button:before {
+    /*content:"\2296"; /*removes FontAwesome icon */
+    /*content:"\2296"; /*removes FontAwesome icon */
+    content:'' !important;
+    font-size: 14px;
+}
+
+.webix_accordionitem .webix_accordionitem_header .webix_accordionitem_button {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMTJDBGvsAAAAx0lEQVQoU2OAgZkzZ7I2NDRU19XV3a6vr/8GZF8H0kVAzAJVAgGhoaHMQMEtQPwfHTc2Nq76//8/I1QpA0NTU1McNoUwDNQQDFXKwAC0cj1Q8APQCd3oGCQOlF8MVQpWfBAoeA/KRQEgcSDeBOWCFU8EmvIbiO8CJd4A6bdA+hWIDxIHslugSsFuVgUKfgUKYrgXKP6xo6NDBqoUAoCe8IaaCFcItPFlc3OzE1QJKmhvbxcEKooDaqwDKozu7OzkhUrRFDAwAAC585cWoFhvAwAAAABJRU5ErkJggg==);
+    background-repeat: no-repeat;
+    margin: 13px 5px !important;
+}
+.webix_accordionitem .webix_accordionitem_header.collapsed .webix_accordionitem_button {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMTJDBGvsAAAA3UlEQVQoU7WPzwoBcRSFp5SysLL1Dp7BG8iOna2FGnvzL00zaTyDoiazVLZSsmZlZ6nYSDaixHdnruIBnPqa3zn3/GbuGB9FUVRwXdezLGvvOM4NdvhukiQ5rWSybTsPS3hRPsAczuK5FGstE2/oyECZSEZ59ZXV0qKI2wuGJxhwbkhGoS0eZKVxWhRhtoQbtT/ikqwzU5uuMaJ8hz2DoWScp+LhSdZPiyLP8yoED5AfjE3TLPBci4dLEARlrWYirMNVCx+OfLWqlV/5vl9i/xb0+FozDMOijv4qw3gDKbyKtJJ+mVQAAAAASUVORK5CYII=);
+    background-repeat: no-repeat;
+}
+
+.webix_accordionitem_button {
+    float: left;
+}
+
+.webix_accordionitem .webix_accordionitem_button {
+    float: left;
+}
+
+.webix_accordionitem.collapsed .webix_accordionitem_button {
+    float: left;
+}
+
+.webix_accordionitem_header {
+    line-height: 33px;
+}
+
+.webix_accordionitem_header.collapsed {
+    line-height: 33px
+}
+
+.webix_tree_folder {
+    display: none;
+}
+
+.webix_tree_folder_open {
+    display: none;
+}
+
+.webix-cell {
+    height: 26px;
+}
+
+.webix_cell_select {
+    background: #898989;
+}
+
+.webix_row_select {
+    background: #898989;
+}
+
+.webix_column > div.webix_row_select {
+  color: #ffffff;
+  background: #898989;
+}
+
+.webix-hcell {
+    height: 26px;
+}
+
+.webix_ss_vscroll.webix_vscroll_y {
+    overflow-y: auto;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ReScatter library examples</title>
+</head>
+<body>
+    <h1><b>ReScatter:</b> Reactive Scatter plots library examples</h1>
+    <h2>Version 0.1</h2>
+    <h2>Introduction</h2>
+    <p1>The purpose of the ReScatter library is the quick production of sites containing very large (10^5 point)
+    scatter plots which permit plot linking and selection brushing and the display of density maps. Selections can be exported for further analysis.
+    The WebGL based plots and the ReScatter technology were first demonstrated on the
+     <a href="brainscope.nl/brainscope">Brainscope</a> website</p1>.
+    <h2>History and usage</h2>
+    <h3>Brainscope framework refactored to ReScatter</h3>
+    <p>On the original <a ref="brainscope.nl/brainscope">Brainscope</a> site the framework code was not minified or uglified in any way.
+    As such anyone using the site could potentially reuse the code as supplied. However the framework, while divided into a number of
+        classes, lacked a clear structure. In order to facilitate open source reuse the framework has been refactored and renamed ReScatter.</p>
+    <h3>Usage and limitations</h3>
+    <p>In its current form the library is still quite restricted in its applicability but if your need plots like those in the Brainscope
+    site that much is possible. The first release has deliberately been given a low version number (0.1) to indicate that much more refactoring is needed
+        to permit the easy reuse of key individual components such as the ReScatter.view.PointGroupView that forms the core of the WebGL based plots.</p>
+    <h2>Major dependencies</h2>
+    <table border="1">
+        <thead>
+        <tr><td>Library</td><td>Comments</td></tr>
+        <tr><td>PIXI.js</td><td><p>Used in ReScatter.control.PixijsPlotController and ReScatter.view.PointGroupView for scatter plots and the density maps. </p></td></tr>
+        <tr><td>webix</td><td><p>Used in the ReScatter.widgets for all widgets functionality.
+            In theory this could be replaced by an alternative widget library.
+            For Brainscope webix was a natural choice as the ontology tree and data selection sections could be easily created using the available controls. </p></td></tr>
+        <tr><td>jQuery</td><td>Used for some DOM search and manipulation and for the sliders that separate the sections of the webpage</td></tr>
+        </thead>
+    </table>
+    <h2>Examples</h2>
+    <table  border="1" id="exampleTable">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Features</th>
+        </tr>
+        <tr>
+            <td><a href="./example_0/example_0.html" target="_blank">MNIST tSNE scatterplot</a></td>
+            <td>A scatterplot of 10000 MNIST digits</td>
+            <td>Rescatter plots<br>10000 MNIST points.</td>
+        </tr>
+        <tr>
+            <td><a href="./example_1/example_1.html" target="_blank">MNIST tSNE Dual view digits/pixels</a></td>
+            <td>Creating coupled graphs in rescatter with a simple SVG based choropleth.</td>
+            <td>Rescatter plots<br>Choropleth<br>10000 MNIST points.</td>
+        </tr>
+        <tr>
+            <td><a href="./example_2/example_2.html" target="_blank">MNIST tSNE 60000 Dual view</a></td>
+            <td>Improving choropleth performance with a html canvas. Demonstration that the choropleth is not limited to svg</td>
+            <td>Rescatter plots<br>Canvas based choropleth plugin<br>60000 MNIST points.</td>
+        </tr>
+        <tr>
+            <td><a href="./example_3/example_3.html" target="_blank">MNIST tSNE 60000 Dual view + radial plot</a></td>
+            <td>Demonstrate integration of d3 based plots as ReScatter plugins. Version 1 only incoming selections</td>
+            <td>d3 integration plugin (radial plot)<br>How to handle incoming selection events in d3 plugin<br>Rescatter plots<br>Canvas based choropleth plugin<br>60000 MNIST points.</td>
+        </tr>
+        <tr>
+            <td><a href="./example_4/example_4.html" target="_blank">MNIST tSNE 60000 Dual view + radial plot</a></td>
+            <td>Demonstrate integration of d3 based plots as ReScatter plugins. Version 2 incoming and outgoing selections</td>
+            <td>d3 integration plugin (radial plot)<br>How to handle incoming and generate outgoing selection events in d3 plugin<br>Rescatter plots<br>Canvas based choropleth plugin<br>60000 MNIST points.</td>
+        </tr>
+        <tr>
+            <td><a href="./example_5/example_5.html" target="_blank">MNIST umap and tSNE 60000 with wheel navigation (thanks to T. H&#xf6;llt)</a></td>
+            <td>Demonstrate a hierarchy of linked plots driven by the wheel navigator</td>
+            <td>d3 visualization as plot navigation<br>Rescatter plots<br>Canvas based choropleth plugin<br>60000 MNIST points.</td>
+        </tr>
+    </table>
+    <h3>Site configuration for the dual view</h3>
+    <h4>Layout and CSS</h4>
+    <p></p>
+    <h4>Plots, data and linking</h4>
+    <p></p>
+    <h4>Note on tSNE dual view</h4>
+    <p> A tSNE dual-view is a technique of creating a tSNE embedding on high dimensionality data over both the sample and data dimensions.
+        The result is samples grouped according to the data dimensions and the data groups according to the samples.
+        By linking the plots the user can discover which data points make the greatest contribution to the sample clusters</p>
+    <h3>MNIST Dual view and thematic map</h3>
+    <p>MNIST handwriting data in a simple dual view with a thematic</p>
+
+</body>
+</html>

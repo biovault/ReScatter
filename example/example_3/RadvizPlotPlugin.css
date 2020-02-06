@@ -1,0 +1,42 @@
+.panel {
+    stroke: #f4f4f4;
+    fill: #161616;
+}
+
+.bg {
+    fill: #000000;
+}
+
+.link {
+    stroke: silver;
+    stroke-opacity: 0.05
+}
+
+.dot {
+    fill-opacity: 0.8;
+}
+
+.label-node {
+    fill: silver;
+}
+
+.active {
+    stroke: #ffffff;
+}
+
+.label {
+    fill: #dedede;
+    pointer-events: none;
+}
+
+#tooltip {
+    font-size: 12px;
+    margin-top: 22px;
+    background-color: #434343;
+    border-radius: 4px;
+}
+
+#tooltip h3 {
+    font-size: 11px;
+    margin: 0;
+}

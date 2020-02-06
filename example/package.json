@@ -1,0 +1,32 @@
+{
+  "name": "examples",
+  "version": "0.1.0",
+  "description": "ReScatter examples",
+  "author": {
+    "name": "Baldur van Lew",
+    "email": "bdotvanunderscorelewatlumcdotnl"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "scripts": {
+    "build": "npm run prebuild && node -e 'require(\"./build_utils\").build_all();'",
+    "prebuild": "rimraf ./example_*/config.js && rimraf ./example_*/config.js.map",
+    "postinstall": "copyfiles -V -f ./node_modules/pixi.js/bin/pixi.* ./framework/vendor && copyfiles -V -f ./node_modules/webix/webix.*  ./framework/vendor && node -e 'require(\"./build_utils\").install_all();'"
+  },
+  "devDependencies": {
+    "canvas": "^2.6.1",
+    "child_process": "^1.0.2",
+    "copyfiles": "^2.2.0",
+    "jsdom": "^16.0.1",
+    "rimraf": "^3.0.1"
+  },
+  "dependencies": {
+    "konva": "^2.0.2",
+    "pixi.js": "^3.0.7",
+    "webix": "^4.3.0"
+  }
+}

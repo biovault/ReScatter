@@ -1,0 +1,44 @@
+dist: bionic
+language: node_js
+services:
+  - docker
+node_js:
+  - lts/*
+
+install:
+  - npm install
+
+before_script:
+  - docker --version
+  - docker pull selenium/standalone-chrome
+  - echo 'Make the seluser id 1000 and group 1000 and use that to create the download directory'
+  - sudo useradd -u 1000 seluser
+  - sudo adduser seluser seluser
+  - export DOWNLOADDIR=`pwd`/tempDownload
+  - echo 'permit rw by default'
+  - mkdir $DOWNLOADDIR
+  - sudo chown seluser:seluser $DOWNLOADDIR
+  - sudo chmod g+rwx `pwd`/tempDownload
+  - sudo chmod a+wx `pwd`/tempDownload
+  - sudo usermod -a -G seluser travis
+  - ls -al
+  - echo $DOWNLOADDIR
+  - ls -al $DOWNLOADDIR
+  - docker build -t selenium:baldur .
+  - docker images
+  - docker run --name selenium_share -d --shm-size=2g -p 0.0.0.0:4444:4444 -p 0.0.0.0:9222:9222 --expose=9222 --expose=4444 -v /dev/shm:/dev/shm -v $DOWNLOADDIR:/tmp/Downloads selenium:baldur
+  - docker exec -t selenium_share bash -c "sudo apt update && sudo apt install -y net-tools"
+  - docker exec -t selenium_share bash -c $'HOSTIP=`route | awk \'/^default/ { print \$2 }\'`; echo $HOSTIP host.docker.internal | sudo tee -a /etc/hosts'
+  - docker exec -t selenium_share bash -c "cat /etc/hosts"
+
+script:
+  - npm run-script build
+  - pushd tools/rs_check_config
+  - npm link
+  - popd
+  - pushd example
+  - npm run-script build
+  - popd
+  - docker ps
+  - docker logs selenium_share
+  - npm run-script test-ci

@@ -1,0 +1,23 @@
+{
+  "name": "tools",
+  "version": "0.1.0",
+  "description": "ReScatter tools",
+  "author": {
+    "name": "Baldur van Lew",
+    "email": "bdotvanunderscorelewatlumcdotnl"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "scripts": {
+    "//comment postinstall": "Install all the supporting tools in the global space for use in build",
+    "postinstall": "(cd rs_check_config && npm install -g)"
+  },
+  "dependencies": {
+    "pixi.js": "^3.0.7",
+    "webix": "^4.3.0"
+  }
+}

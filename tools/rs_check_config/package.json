@@ -1,0 +1,27 @@
+{
+  "name": "rs_check_config",
+  "version": "0.1.0",
+  "description": "Validate ReScatter website configurations",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "ReScatter"
+  ],
+  "author": "Baldur van Lew",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@hapi/joi": "^16.1.8",
+    "canvas": "^2.6.0",
+    "commander": "^4.0.1",
+    "esm": "^3.2.25",
+    "jsdom": "^15.2.1",
+    "path": "^0.12.7",
+    "pixi.js": "^3.0.7",
+    "require-from-string": "^2.0.2",
+    "webix": "^4.3.0"
+  },
+  "bin": {
+    "rs_check_config": "./index.js"
+  },
+  "devDependencies": {}
+}

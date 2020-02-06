@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../framework/rescatter_dark.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!--script type="text/javascript" src="../framework/vendor/jquery-resizable.min.js"></script-->
+    <script type="text/javascript" src="../framework/vendor/pixi.js"></script>
+    <script type="text/javascript" src="../framework/vendor/webix.js"></script>
+    <script type="text/javascript" src="../framework/rescatter.js"></script>
+    <script type="text/javascript" src="../framework/rescatter_layouts.js"></script>
+    <script type="text/javascript" src="example_config.js"></script>
+    <!-- The site is using the webix controls so use the webix ready event can be used
+     to start start the site -->
+    <script type="text/javascript">
+        webix.ready(function() {
+            window.siteInstance = new ReScatter.control.SiteInstance(window.siteConfig);
+        });
+    </script>
+    <meta charset="UTF-8">
+    <title>MNIST tSNE embedding</title>
+</head>
+<body>
+	<div class="loadingOverlay" id="ReScatter.CONTROL_ID.LOADINGOVERLAY">
+		<h1 class="onair" id="ReScatter.CONTROL_ID.LOADINGPROMPT" data-pointData="{}">Please load a data set...</h1>
+		<div class="loader-bg boxair"></div>
+	</div>
+    <!-- floating div for displaying selection details -->
+    <div id="ReScatter.CONTROL_ID.SELECTIONINFO"></div>
+    <!-- floating div for choropleth annotation -->
+	<div id="ReScatter.CONTROL_ID.ANNOTATECHOROPLETH"></div>
+    <!-- floating div for plot context menu --> `
+    <div id="ReScatter.CONTROL_ID.PLOTMENU"></div>
+    <div class="main_content">
+        <div class="content_block">
+            <div class="content_left" id="ReScatter.CONTROL_ID.WIDGETS"></div>
+            <div class="content_splitter" id="ReScatter.CONTROL_ID.LEFTSPLITTER"></div>
+            <div class="content_center" id="ReScatter.CONTROL_ID.CHARTS"></div>
+        </div>
+    </div>
+</body>
+</html>

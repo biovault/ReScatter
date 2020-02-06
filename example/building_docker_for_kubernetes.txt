@@ -1,0 +1,62 @@
+Based on Google kubernetes tutorial https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
+
+Get the ReScatter example into the dir
+
+cp -R ../VAnPIRe/ReScatter/example ./
+
+Build this dir (has Dockerfile)
+
+docker build .
+
+Test run locally
+
+docker run --rm -p 80:80 --name "rescatter" 6fd4fdc295ee
+
+(last bit is the container id from the build)
+
+Build this dir (has Dockerfile) and push to google registry with tag
+
+export PROJECT_ID="$(gcloud config get-value project -q)"
+
+docker build -t gcr.io/${PROJECT_ID}/rescatter-example:v1 .
+
+Upload the image
+
+gcloud docker -- push gcr.io/${PROJECT_ID}/rescatter-example:v1
+
+gcloud container clusters create rescatter-cluster --num-nodes=1
+
+kubectl run rescatter-example --image=gcr.io/${PROJECT_ID}/rescatter-example:v1 --port 80
+
+To show the pod (== collection of containers wth shared storage/network with a specification as to how to run the containers)
+kubectl get pods
+
+Expose to the internec - this creates a service resource providing networking
+kubectl expose deployment rescatter-example --type=LoadBalancer --port 80 --target-port 80
+
+kubectl get service (first column is the service name)
+
+NAME                CLUSTER-IP    EXTERNAL-IP      PORT(S)        AGE
+kubernetes          10.3.240.1    <none>           443/TCP        5d
+rescatter-example   10.3.248.37   35.198.145.178   80:31212/TCP   5d
+
+Repeat until an external IP is visible for your service (rescatter-example)
+
+
+Console at https://console.developers.google.com/apis/dashboard?project=brainscope-backend&duration=PT1H
+
+Cleanup the project
+*
+kubectl delete service rescatter-example
+
+Wait for the load balancer to go by running this
+*
+gcloud compute forwarding-rules list
+
+then delete the container cluster
+*
+gcloud container clusters delete rescatter-example
+
+Go cleanup the container registry gcr.io/brainscope-backend/rescatter-example
+*
+https://console.cloud.google.com/gcr/images/brainscope-backend?project=brainscope-backend
