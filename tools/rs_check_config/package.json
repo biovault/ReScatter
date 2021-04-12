@@ -10,7 +10,7 @@
   "author": "Baldur van Lew",
   "license": "Apache-2.0",
   "dependencies": {
-    "joi": "^16.1.8",
+    "joi": "^17.4.0",
     "canvas": "^2.6.0",
     "commander": "^4.0.1",
     "esm": "^3.2.25",
